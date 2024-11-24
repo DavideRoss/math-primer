@@ -1,5 +1,7 @@
 from manim import *
 
+import numpy as np
+
 def formula(formula, opacity=0.5):
     group = VGroup()
 
@@ -17,3 +19,6 @@ def vertical_asymptote(plane, x, range=10):
 
 def horizontal_asymptote(plane, y, range=10):
     return DashedLine(plane.c2p(-range, y), plane.c2p(range, y), dash_length=.25, stroke_width=1.5)
+
+def distance(p1, p2):
+    return np.linalg.norm(p2 - p1)

@@ -92,7 +92,7 @@ class Div1(Scene):
         # dot = Dot(lim_point, color=GREEN)
         # lines = plane.get_lines_to_point(lim_point)
 
-        formula1 = formula(r"\lim_{x \to +\infty} \frac{1}{x}")
+        formula1 = eval(r"\lim_{x \to +\infty} \frac{1}{x}")
         formula1.move_to(LEFT * 5 + UP * 2.85)
 
         graph1 = plane.plot(lambda x: 1.0/x, [-10, -0.001, 0.005], color=RED)
@@ -101,7 +101,7 @@ class Div1(Scene):
 
 class Div2(Scene):
     def construct(self):
-        formula2 = formula(r"\lim_{x \to 0} \frac{1}{x}", 0.7)
+        formula2 = eval(r"\lim_{x \to 0} \frac{1}{x}", 0.7)
         formula2.move_to(LEFT * 2.5 + UP * 2.85)
 
         self.add(formula2)

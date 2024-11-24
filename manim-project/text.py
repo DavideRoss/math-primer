@@ -41,3 +41,31 @@ class TextRandom(Scene):
         t.scale(3)
 
         self.add(t)
+
+class DerPower(Scene):
+    def construct(self):
+        t = MathTex(r"\frac{d}{dx} x^a = ax^{a-1}")
+        t.scale(3)
+        self.add(t)
+
+class DerNatLog(Scene):
+    def construct(self):
+        t = MathTex(r"\frac{d}{dx} e^x = e^x")
+        t.scale(3)
+        self.add(t)
+
+class DerSinLoop(Scene):
+    def construct(self):
+        t1 = MathTex(r"\frac{d}{dx}\sin(x) = \cos(x)").move_to(UP * 2).scale(1)
+        t2 = MathTex(r"\frac{d}{dx}\cos(x) = -\sin(x)").move_to(LEFT * -3).scale(1)
+        t3 = MathTex(r"\frac{d}{dx}-\sin(x) = -\cos(x)").move_to(UP * -2 ).scale(1)
+        t4 = MathTex(r"\frac{d}{dx}-\cos(x) = \sin(x)").move_to(LEFT * 3).scale(1)
+
+        ca = Arc(1, 0, PI / 2, arc_center=[0, 0, 0]).rotate(-PI / 50)
+        c1 = ca.copy().move_to(-3.5 * LEFT + 1.5 * UP).add_tip(at_start=True)
+        c2 = c1.copy().rotate(-PI / 2).move_to(-3.5 * LEFT -1.5 * UP)
+        c3 = c2.copy().rotate(-PI / 2).move_to(3.5 * LEFT -1.5 * UP)
+        c4 = c3.copy().rotate(-PI / 2).move_to(3.5 * LEFT +1.5 * UP)
+
+        self.add(t1, t2, t3, t4)
+        self.add(c1, c2, c3, c4)
