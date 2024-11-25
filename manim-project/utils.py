@@ -2,12 +2,12 @@ from manim import *
 
 import numpy as np
 
-def formula(formula, opacity=0.5):
+def formula(formula, opacity=0.5, color=RED):
     group = VGroup()
 
     text = MathTex(formula)
-    rect = SurroundingRectangle(text, color=RED, fill_color=RED, corner_radius=0.1, buff=.25)
-    rect.set_fill(RED, opacity)
+    rect = SurroundingRectangle(text, color, fill_color=color, corner_radius=0.1, buff=.25)
+    rect.set_fill(color, opacity)
 
     group.add(rect)
     group.add(text)
