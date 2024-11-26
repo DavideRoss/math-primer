@@ -69,3 +69,15 @@ class DerSinLoop(Scene):
 
         self.add(t1, t2, t3, t4)
         self.add(c1, c2, c3, c4)
+
+class Riemann1(Scene):
+    def construct(self):
+        f = MathTex(r"\int_{a}^{b} f(x)dx \approx \lim_{n \to \infty} \sum_{i=1}^{n} f(x)dx")
+        f.scale(2)
+        self.add(f)
+
+class Riemann2(Scene):
+    def construct(self):
+        f = MathTex(r"dx = \frac{b-a}{n}")
+        f.scale(2)
+        self.add(f)

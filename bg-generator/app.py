@@ -1,7 +1,7 @@
 import math
 from PIL import Image
 
-INPUT_FILE = "tractor"
+INPUT_FILE = "clapping-hands"
 RESOLUTION = (4096, 4096)
 MARGIN = (32, 32)
 
