@@ -69,3 +69,45 @@ class DerSinLoop(Scene):
 
         self.add(t1, t2, t3, t4)
         self.add(c1, c2, c3, c4)
+
+class PhysicsForce(Scene):
+    def construct(self):
+        t = MathTex(r"F = ma")
+        t.scale(3)
+        self.add(t)
+
+class PhysicsAccel1(Scene):
+    def construct(self):
+        t = MathTex(r"a = \frac{F}{m}")
+        t.scale(3)
+        self.add(t)
+
+class PhysicsAccel2(Scene):
+    def construct(self):
+        t = MathTex(r"a = \frac{\Delta v}{\Delta t}")
+        t.scale(3)
+        self.add(t)
+
+class PhysicsVel(Scene):
+    def construct(self):
+        t = MathTex(r"v = \frac{\Delta x}{\Delta t}")
+        t.scale(3)
+        self.add(t)
+
+class NumImplEuler1(Scene):
+    def construct(self):
+        t = MathTex(r"v_{n+1} = v_n+a\Delta t")
+        t.scale(1.5)
+        self.add(t)
+
+class NumImplEuler2(Scene):
+    def construct(self):
+        t = MathTex(r"x_{n+1}=x_n+v_{n+1}\Delta t")
+        t.scale(1.5)
+        self.add(t)
+
+class NumVerlet(Scene):
+    def construct(self):
+        t = MathTex(r"x_{n+1} = x_n+(x_n-x_{n-1})+a\Delta t^2")
+        t.scale(1.5)
+        self.add(t)
