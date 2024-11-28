@@ -192,16 +192,16 @@ class IntArea0(Scene):
         d2 = Dot(plane.c2p(3, eval(3)))
         self.add(d1, d2)
 
-        f = formula(r"\int_{0}^{3}f(x) dx = {?}")
+        f = formula(r"\int_{0}^{3}f(x) dx = {?}", rect_size=5)
         f.scale(0.75)
-        f.move_to(UP * 2.5 + LEFT * 3)
+        f.move_to(UP * 2.5 + LEFT * 2.75)
         self.add(f)
 
 class IntArea1(Scene):
     def construct(self):
         plane, graph = basis(self)
 
-        step = 0.25
+        step = 0.3
 
         rects, dots = integration_sum(plane, 3.5, step=step)
         self.add(rects, dots)
@@ -229,7 +229,209 @@ class IntArea1(Scene):
             area += eval(x) * step
             x += step
 
-        f = formula(r"\int_{0}^{3}f(x) dx = " + "{:.4f}".format(round(area, 4)))
+        f = formula(r"\int_{0}^{3}f(x) dx = " + "{:.4f}".format(round(area, 4)), rect_size=5)
         f.scale(0.75)
         f.move_to(UP * 2.5 + LEFT * 2.75)
         self.add(f)
+
+class IntArea2(Scene):
+    def construct(self):
+        plane, graph = basis(self)
+
+        step = 0.3
+
+        rects, dots = integration_sum(plane, 3.5, step=step)
+        self.add(rects, dots)
+
+        l = DashedLine(plane.c2p(3, -5), plane.c2p(3, 5))
+        self.add(l)
+        
+        self.add(graph)
+        self.add(dots)
+
+        t1 = MathTex("0")
+        t1.scale(0.75)
+        t1.move_to(plane.c2p(0, 0) + DOWN * 0.35 + RIGHT * 0.35)
+        self.add(t1)
+
+        t2 = MathTex("3")
+        t2.scale(0.75)
+        t2.move_to(plane.c2p(3, 0) + DOWN * 0.35 + LEFT * 0.35)
+        self.add(t2)
+
+        # Area numerical calculation
+        area = 0
+        x = 0
+        while x <= 3:
+            area += eval(x) * step
+            x += step
+
+        f = formula(r"\int_{0}^{3}f(x) dx = " + "{:.4f}".format(round(area, 4)), rect_size=5)
+        f.scale(0.75)
+        f.move_to(UP * 2.5 + LEFT * 2.75)
+        self.add(f)
+
+        f2 = formula(r"\sum_{i=1}^{n}f(x)\Delta x")
+        f2.scale(0.75)
+        f2.move_to(UP * 2.5 + RIGHT * 0.5)
+        self.add(f2)
+
+class IntArea3(Scene):
+    def construct(self):
+        plane, graph = basis(self)
+
+        step = 0.3
+
+        rects, dots = integration_sum(plane, 3.5, step=step)
+        self.add(rects, dots)
+
+        l = DashedLine(plane.c2p(3, -5), plane.c2p(3, 5))
+        self.add(l)
+        
+        self.add(graph)
+        self.add(dots)
+
+        t1 = MathTex("0")
+        t1.scale(0.75)
+        t1.move_to(plane.c2p(0, 0) + DOWN * 0.35 + RIGHT * 0.35)
+        self.add(t1)
+
+        t2 = MathTex("3")
+        t2.scale(0.75)
+        t2.move_to(plane.c2p(3, 0) + DOWN * 0.35 + LEFT * 0.35)
+        self.add(t2)
+
+        # Area numerical calculation
+        area = 0
+        x = 0
+        while x <= 3:
+            area += eval(x) * step
+            x += step
+
+        f = formula(r"\int_{0}^{3}f(x) dx = " + "{:.4f}".format(round(area, 4)), rect_size=5)
+        f.scale(0.75)
+        f.move_to(UP * 2.5 + LEFT * 2.75)
+        self.add(f)
+
+        f2 = formula(r"\sum_{i=1}^{n}f(x)\Delta x")
+        f2.scale(0.75)
+        f2.move_to(UP * 2.5 + RIGHT * 0.5)
+        self.add(f2)
+
+        f3 = formula(r"\Delta x = \frac{b-a}{n} = \frac{3}{n}")
+        f3.scale(0.75)
+        f3.move_to(UP * 2.5 + RIGHT * 3.4)
+        self.add(f3)
+
+class IntArea4(Scene):
+    def construct(self):
+        plane, graph = basis(self)
+
+        step = 0.3
+
+        rects, dots = integration_sum(plane, 3.5, step=step)
+        self.add(rects, dots)
+
+        l = DashedLine(plane.c2p(3, -5), plane.c2p(3, 5))
+        self.add(l)
+        
+        self.add(graph)
+        self.add(dots)
+
+        t1 = MathTex("0")
+        t1.scale(0.75)
+        t1.move_to(plane.c2p(0, 0) + DOWN * 0.35 + RIGHT * 0.35)
+        self.add(t1)
+
+        t2 = MathTex("3")
+        t2.scale(0.75)
+        t2.move_to(plane.c2p(3, 0) + DOWN * 0.35 + LEFT * 0.35)
+        self.add(t2)
+
+        # Area numerical calculation
+        area = 0
+        x = 0
+        while x <= 3:
+            area += eval(x) * step
+            x += step
+
+        f = formula(r"\int_{0}^{3}f(x) dx = " + "{:.4f}".format(round(area, 4)), rect_size=5)
+        f.scale(0.75)
+        f.move_to(UP * 2.5 + LEFT * 2.75)
+        self.add(f)
+
+        f2 = formula(r"\sum_{i=1}^{n}f(x)dx")
+        f2.scale(0.75)
+        f2.move_to(UP * 2.5 + RIGHT * 0.5)
+        self.add(f2)
+
+        f3 = formula(r"dx = \frac{b-a}{n} = \frac{3}{n}")
+        f3.scale(0.75)
+        f3.move_to(UP * 2.5 + RIGHT * 3.4)
+        self.add(f3)
+
+class IntArea5(Scene):
+    def construct(self):
+        plane, graph = basis(self)
+
+        step = 0.3
+        v = ValueTracker(0.3)
+
+        rects, dots = integration_sum(plane, 3.5, step=step)
+        self.add(rects, dots)
+
+        rects.add_updater(lambda y: y.become(integration_sum(plane, 3.5, step=v.get_value())[0]))
+        dots.add_updater(lambda y: y.become(integration_sum(plane, 3.5, step=v.get_value())[1]))
+
+        l = DashedLine(plane.c2p(3, -5), plane.c2p(3, 5))
+        self.add(l)
+        
+        self.add(graph)
+        self.add(dots)
+
+        t1 = MathTex("0")
+        t1.scale(0.75)
+        t1.move_to(plane.c2p(0, 0) + DOWN * 0.35 + RIGHT * 0.35)
+        self.add(t1)
+
+        t2 = MathTex("3")
+        t2.scale(0.75)
+        t2.move_to(plane.c2p(3, 0) + DOWN * 0.35 + LEFT * 0.35)
+        self.add(t2)
+
+        # Area numerical calculation
+        def eval_rects(step):
+            area = 0
+            x = 0
+            while x <= 3:
+                area += eval(x) * step
+                x += step
+            return area
+        
+        area = eval_rects(v.get_value())
+
+        def create_formula(area):
+            f = formula(r"\int_{0}^{3}f(x) dx = " + "{:.4f}".format(round(area, 4)), rect_size=5)
+            f.scale(0.75)
+            f.move_to(UP * 2.5 + LEFT * 2.75)
+            return f
+        
+        f = create_formula(area)
+        f.add_updater(lambda y: y.become(create_formula(eval_rects(v.get_value()))))
+        self.add(f)
+
+        f2 = formula(r"\sum_{i=1}^{n}f(x)dx")
+        f2.scale(0.75)
+        f2.move_to(UP * 2.5 + RIGHT * 0.5)
+        self.add(f2)
+
+        f3 = formula(r"dx = \frac{b-a}{n} = \frac{3}{n}")
+        f3.scale(0.75)
+        f3.move_to(UP * 2.5 + RIGHT * 3.4)
+        self.add(f3)
+
+        self.wait()
+        self.play(v.animate.set_value(0.05), run_time=3)
+        self.wait()
+        self.play(v.animate.set_value(0.3), run_time=3)
+        self.wait()

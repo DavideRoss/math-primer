@@ -111,3 +111,14 @@ class NumVerlet(Scene):
         t = MathTex(r"x_{n+1} = x_n+(x_n-x_{n-1})+a\Delta t^2")
         t.scale(1.5)
         self.add(t)
+class Riemann1(Scene):
+    def construct(self):
+        f = MathTex(r"\int_{a}^{b} f(x)dx \approx \lim_{n \to \infty} \sum_{i=1}^{n} f(x)dx")
+        f.scale(2)
+        self.add(f)
+
+class Riemann2(Scene):
+    def construct(self):
+        f = MathTex(r"dx = \frac{b-a}{n}")
+        f.scale(2)
+        self.add(f)
