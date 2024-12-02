@@ -132,7 +132,7 @@ class CubicBezier(Scene):
         pg = VGroup()
         pg.add(MathTex(r"(1 - t)^3 P_1 +").set_color(PURPLE_A))
         pg.add(MathTex(r"3(1 - t)^2t P_2 +").set_color(TEAL))
-        pg.add(MathTex(r"3(1 - t)^2 P_3 +").set_color(GREEN))
+        pg.add(MathTex(r"3(1 - t)t^2 P_3 +").set_color(GREEN))
         pg.add(MathTex(r"t^3 P_4").set_color(YELLOW))
 
         pg.arrange(DOWN, center=False, aligned_edge=LEFT)
@@ -159,7 +159,7 @@ class CubicDerivative0(Scene):
         pg = VGroup()
         pg.add(MathTex(r"(1 - t)^3 P_1 +"))
         pg.add(MathTex(r"3(1 - t)^2t P_2 +"))
-        pg.add(MathTex(r"3(1 - t)^2 P_3 +"))
+        pg.add(MathTex(r"3(1 - t)t^2 P_3 +"))
         pg.add(MathTex(r"t^3 P_4"))
 
         pg.arrange(DOWN, center=False, aligned_edge=LEFT)
