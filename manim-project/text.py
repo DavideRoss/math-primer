@@ -122,3 +122,90 @@ class Riemann2(Scene):
         f = MathTex(r"dx = \frac{b-a}{n}")
         f.scale(2)
         self.add(f)
+
+class CubicBezier(Scene):
+    def construct(self):
+        form = VGroup()
+        initial = MathTex("B(t) = ").set_color(RED)
+        form.add(initial)
+
+        pg = VGroup()
+        pg.add(MathTex(r"(1 - t)^3 P_1 +").set_color(PURPLE_A))
+        pg.add(MathTex(r"3(1 - t)^2t P_2 +").set_color(TEAL))
+        pg.add(MathTex(r"3(1 - t)^2 P_3 +").set_color(GREEN))
+        pg.add(MathTex(r"t^3 P_4").set_color(YELLOW))
+
+        pg.arrange(DOWN, center=False, aligned_edge=LEFT)
+        
+        form.add(pg)
+        form.arrange(RIGHT, aligned_edge=UP)
+
+        initial.move_to(initial.get_center() + DOWN * 0.05)
+        form.scale(1.5)
+        self.add(form)
+
+class Lerp(Scene):
+    def construct(self):
+        f = MathTex(r"f = (1-t)x + ty")
+        f.scale(3)
+        self.add(f)
+
+class CubicDerivative0(Scene):
+    def construct(self):
+        form = VGroup()
+        initial = MathTex("B(t) = ")
+        form.add(initial)
+
+        pg = VGroup()
+        pg.add(MathTex(r"(1 - t)^3 P_1 +"))
+        pg.add(MathTex(r"3(1 - t)^2t P_2 +"))
+        pg.add(MathTex(r"3(1 - t)^2 P_3 +"))
+        pg.add(MathTex(r"t^3 P_4"))
+
+        pg.arrange(DOWN, center=False, aligned_edge=LEFT)
+        
+        form.add(pg)
+        form.arrange(RIGHT, aligned_edge=UP)
+
+        initial.move_to(initial.get_center() + DOWN * 0.05)
+        form.scale(1.5)
+        self.add(form)
+
+class CubicDerivative1(Scene):
+    def construct(self):
+        form = VGroup()
+        initial = MathTex("B'(t) = ")
+        form.add(initial)
+
+        pg = VGroup()
+        pg.add(MathTex(r"3(1 - t)^2 (P_2 - P_1) +"))
+        pg.add(MathTex(r"6(1 - t)t(P_3 - P_2) + "))
+        pg.add(MathTex(r"3t^2(P_4 - P_3)"))
+
+        pg.arrange(DOWN, center=False, aligned_edge=LEFT)
+        
+        form.add(pg)
+        form.arrange(RIGHT, aligned_edge=UP)
+
+        initial.move_to(initial.get_center() + DOWN * 0.05)
+        form.scale(1.5)
+        self.add(form)
+
+class CubicDerivative2(Scene):
+    def construct(self):
+        form = VGroup()
+        initial = MathTex("B''(t) = ")
+        form.add(initial)
+
+        pg = VGroup()
+        pg.add(MathTex(r"6(1 - t)(P_3 - 2P_2 + P_1) +"))
+        pg.add(MathTex(r"6t(1 - t)(P_4 - 2P_3 + P_2)"))
+
+        pg.arrange(DOWN, center=False, aligned_edge=LEFT)
+        
+        form.add(pg)
+        form.arrange(RIGHT, aligned_edge=UP)
+
+        initial.move_to(initial.get_center() + DOWN * 0.05)
+        form.scale(1.5)
+        self.add(form)
