@@ -209,3 +209,9 @@ class CubicDerivative2(Scene):
         initial.move_to(initial.get_center() + DOWN * 0.05)
         form.scale(1.5)
         self.add(form)
+
+class Curvature(Scene):
+    def construct(self):
+        f = MathTex(r"\kappa = \frac{det(P', P'')}{\left\| P' \right\|^3}")
+        f.scale(3)
+        self.add(f)

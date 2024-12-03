@@ -274,3 +274,29 @@ class Road10(Scene):
 
         track(self, top)
         track(self, bottom)
+
+class LUT(Scene):
+    def construct(self):
+        build_lut()
+
+        length = 6
+        dist_scale = max(distances)
+        times_scale = max(times)
+
+        plane = Axes(
+            x_range=(0, times_scale), y_range=(0, dist_scale),
+            x_length=length, y_length=length,
+            tips=False,
+            axis_config={
+                'include_ticks': False
+            }
+        )
+
+        line = plane.plot_line_graph(times, distances, add_vertex_dots=False)
+        self.add(plane, line)
+
+        self.add(Line(LEFT * length / 2 + UP * length / 2, RIGHT * length / 2 + UP * length / 2, stroke_width=2))
+        self.add(Line(RIGHT * length / 2 + UP * length / 2, RIGHT * length / 2 + DOWN * length / 2, stroke_width=2))
+
+        self.add(Text("Distance").scale(1).rotate(PI / 2).move_to(LEFT * (length / 2 + 0.5)))
+        self.add(Text("Time").scale(1).move_to(DOWN * (length / 2 + 0.4)))
